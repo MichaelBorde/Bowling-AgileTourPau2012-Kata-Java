@@ -11,14 +11,14 @@ public class TestPartie {
 
 	@Test
 	public void jePeuxObtenirLeScoreDUnePartieGoutière() {
-		nouveauxLancés(20, 0);
+		nouveauxLancers(20, 0);
 
 		assertThat(partie.score()).isEqualTo(0);
 	}
 
 	@Test
 	public void jePeuxObtenirLeScoreDUnePartieModeste() {
-		nouveauxLancés(20, 1);
+		nouveauxLancers(20, 1);
 
 		assertThat(partie.score()).isEqualTo(20);
 	}
@@ -26,8 +26,8 @@ public class TestPartie {
 	@Test
 	public void leScorePrendEnCompteLeSpare() {
 		nouveauSpare();
-		nouveauxLancés(1, 1);
-		nouveauxLancés(17, 0);
+		nouveauxLancers(1, 1);
+		nouveauxLancers(17, 0);
 
 		assertThat(partie.score()).isEqualTo(12);
 	}
@@ -35,43 +35,43 @@ public class TestPartie {
 	@Test
 	public void leScorePrendEnCompteLeStrike() {
 		nouveauStrike();
-		nouveauxLancés(1, 1);
-		nouveauxLancés(1, 2);
-		nouveauxLancés(16, 0);
+		nouveauxLancers(1, 1);
+		nouveauxLancers(1, 2);
+		nouveauxLancers(16, 0);
 
 		assertThat(partie.score()).isEqualTo(16);
 	}
 
 	@Test
-	public void unSecondLancéQuiAbattraitToutesLesQuillesNEstPasUnStrike() {
-		nouveauxLancés(1, 0);
-		nouveauxLancés(1, 10);
-		nouveauxLancés(1, 2);
-		nouveauxLancés(1, 2);
-		nouveauxLancés(16, 0);
+	public void unSecondLancerQuiAbattraitToutesLesQuillesNEstPasUnStrike() {
+		nouveauxLancers(1, 0);
+		nouveauxLancers(1, 10);
+		nouveauxLancers(1, 2);
+		nouveauxLancers(1, 2);
+		nouveauxLancers(16, 0);
 
 		assertThat(partie.score()).isEqualTo(16);
 	}
 
 	@Test
 	public void leScoreDUnePartieDeStrikesEst300() {
-		nouveauxLancés(12, 10);
+		nouveauxLancers(12, 10);
 
 		assertThat(partie.score()).isEqualTo(300);
 	}
 
 	private void nouveauStrike() {
-		nouveauxLancés(1, 10);
+		nouveauxLancers(1, 10);
 	}
 
 	private void nouveauSpare() {
-		nouveauxLancés(1, 4);
-		nouveauxLancés(1, 6);
+		nouveauxLancers(1, 4);
+		nouveauxLancers(1, 6);
 	}
 
-	private void nouveauxLancés(int lancés, int quilles) {
-		for (int i = 0; i < lancés; i++) {
-			partie.nouveauLancé(quilles);
+	private void nouveauxLancers(int lancer, int quilles) {
+		for (int i = 0; i < lancer; i++) {
+			partie.nouveauLancer(quilles);
 		}
 	}
 

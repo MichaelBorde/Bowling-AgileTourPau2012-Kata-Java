@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Partie {
-	public void nouveauLancé(int quilles) {
-		lancés.add(quilles);
+	public void nouveauLancer(int quilles) {
+		lancers.add(quilles);
 	}
 
 	public int score() {
@@ -25,24 +25,24 @@ public class Partie {
 	}
 
 	private int bonusStrike(int indiceCarreau) {
-		return lancés.get(indiceCarreau + 1) + lancés.get(indiceCarreau + 2);
+		return lancers.get(indiceCarreau + 1) + lancers.get(indiceCarreau + 2);
 	}
 
 	private boolean estStrike(int indiceCarreau) {
-		return lancés.get(indiceCarreau) == 10;
+		return lancers.get(indiceCarreau) == 10;
 	}
 
 	private int scoreCarreau(int indiceCarreau) {
-		return lancés.get(indiceCarreau) + lancés.get(indiceCarreau + 1);
+		return lancers.get(indiceCarreau) + lancers.get(indiceCarreau + 1);
 	}
 
 	private boolean estSpare(int indiceCarreau) {
-		return lancés.get(indiceCarreau) + lancés.get(indiceCarreau + 1) == 10;
+		return lancers.get(indiceCarreau) + lancers.get(indiceCarreau + 1) == 10;
 	}
 
 	private Integer bonusSpare(int indiceCarreau) {
-		return lancés.get(indiceCarreau + 2);
+		return lancers.get(indiceCarreau + 2);
 	}
 
-	List<Integer> lancés = new ArrayList<Integer>();
+	List<Integer> lancers = new ArrayList<Integer>();
 }
