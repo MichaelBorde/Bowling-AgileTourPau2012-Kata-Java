@@ -1,9 +1,13 @@
+package fr.arpinum.bowling;
+
 import static org.fest.assertions.Assertions.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
+
 public class TestPartie {
+
 	@Before
 	public void setUp() throws Exception {
 		partie = new Partie();

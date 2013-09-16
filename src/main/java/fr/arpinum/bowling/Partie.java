@@ -1,5 +1,8 @@
+package fr.arpinum.bowling;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Partie {
 	public void nouveauLancer(int quilles) {
@@ -13,7 +16,8 @@ public class Partie {
 			if (estStrike(indiceCarreau)) {
 				résultat += 10 + bonusStrike(indiceCarreau);
 				indiceCarreau++;
-			} else {
+			}
+			else {
 				résultat += scoreCarreau(indiceCarreau);
 				if (estSpare(indiceCarreau)) {
 					résultat += bonusSpare(indiceCarreau);
